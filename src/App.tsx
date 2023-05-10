@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import './App.css'
+import React from 'react'
+import Start from './pages/Start'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const api = fetch('https://fakestoreapi.com/products/')
   .then(res=>res.json())
@@ -13,7 +11,7 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Start/>
     </>
   )
 }
