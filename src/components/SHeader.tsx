@@ -1,3 +1,4 @@
+import Menu from '../components/Menu'
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,7 +13,7 @@ function Header() {
       <Navbar bg="dark" variant="dark">
         <Container className="me-auto">
           <Badge bg="light" text="dark">
-            BMenu
+            <Menu/>
           </Badge>
           <Nav>
             <Col xs={6} md={4}>
