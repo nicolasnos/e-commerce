@@ -1,4 +1,7 @@
+import { Route, Routes } from "react-router-dom";
 import Menu from '../components/Menu'
+import Store from '../pages/Store';
+import Electronic from '../pages/Electronic';
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,6 +12,7 @@ import logo from "../assets/images/Nlogo.png";
 
 function Header() {
   return (
+    <>
     <header>
       <Navbar bg="dark" variant="dark">
         <Container className="me-auto">
@@ -26,6 +30,12 @@ function Header() {
         </Container>
       </Navbar>
     </header>
+
+<Routes>
+<Route path='/' element={<Store/>}/>
+<Route path='/electronic' element={<Electronic/>}/>
+</Routes>
+</>
   );
 }
 

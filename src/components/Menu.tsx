@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
+
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
-
-
 
 const Menu = () => {
   const [show, setShow] = useState(false);
@@ -19,15 +20,19 @@ const Menu = () => {
           <Offcanvas.Title>E-Commerce</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
+      <BrowserRouter>
+
           <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link href="/electronics">Electronicos</Nav.Link>
-            <Nav.Link href="/men">Hombres</Nav.Link>
-            <Nav.Link href="/women">Mujeres</Nav.Link>
+            <Link to="/">Inicio</Link>
+            <Link to="/electronic">Electronic</Link>
+            <Link to="/">men</Link>
+            <Link to="/">women</Link>
           </Nav>
+    </BrowserRouter>
         </Offcanvas.Body>
       </Offcanvas>
     </aside>
-  )
+    )
 }
 
 export default Menu;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import Store from './Store'
+import SHeader from '../components/SHeader'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -22,7 +22,7 @@ const Start = () => {
   }, [uEmail, uName])
 
   if (redirectSt){
-    return <Store/>
+    return <SHeader/>
   } return (
     <div>
       <Header/>
