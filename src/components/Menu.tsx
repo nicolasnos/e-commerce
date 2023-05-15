@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-
-
+import {  Link, Route, BrowserRouter, Routes } from "react-router-dom";
+import Store from '../pages/Store';
+import Electronic from '../pages/Electronic';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
@@ -12,6 +12,7 @@ const Menu = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
+    <BrowserRouter>
     <aside>      
       <Button variant="dark" onClick={handleShow}>Menu </Button>
 
@@ -20,18 +21,21 @@ const Menu = () => {
           <Offcanvas.Title>E-Commerce</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-      <BrowserRouter>
 
           <Nav defaultActiveKey="/home" className="flex-column">
-            <Link to="/">Inicio</Link>
-            <Link to="/electronic">Electronic</Link>
-            <Link to="/">men</Link>
-            <Link to="/">women</Link>
+            <Nav.Link as={Link} to={"/"}>Inicio</Nav.Link>
+            <Nav.Link as={Link} to={"/electronic"}>Electronic</Nav.Link>
+            <Nav.Link as={Link} to={"/"}>men</Nav.Link>
+            <Nav.Link as={Link} to={"/"}>women</Nav.Link>
           </Nav>
-    </BrowserRouter>
         </Offcanvas.Body>
       </Offcanvas>
     </aside>
+          <Routes>
+          <Route path='/' element={<Store/>}/>
+          <Route path='/electronic' element={<Electronic/>}/>
+        </Routes>
+      </BrowserRouter>
     )
 }
 
