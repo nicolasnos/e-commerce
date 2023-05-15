@@ -21,9 +21,10 @@ const Menu = () => {
 
           <Nav defaultActiveKey="/home" className="flex-column">
             <Nav.Link as={Link} to={"/"}>Inicio</Nav.Link>
-            <Nav.Link as={Link} to={"/electronic"}>Electronic</Nav.Link>
-            <Nav.Link as={Link} to={"/men"}>men</Nav.Link>
-            <Nav.Link as={Link} to={"/women"}>women</Nav.Link>
+            <Nav.Link as={Link} to={"/electronic"}>Electronicos</Nav.Link>
+            <Nav.Link as={Link} to={"/men"}>Hombre</Nav.Link>
+            <Nav.Link as={Link} to={"/women"}>Mujer</Nav.Link>
+            <Nav.Link as={Link} to={"/cart"}>Carrito</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

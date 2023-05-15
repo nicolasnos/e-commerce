@@ -1,9 +1,11 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
 import Menu from '../components/Menu'
 import Store from '../pages/Store';
 import Electronic from '../pages/Electronic';
 import Men from '../pages/Men';
 import Women from '../pages/Women';
+import Cart from '../pages/Cart';
+/* Importaciones de bootstrap */
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -27,7 +29,7 @@ function Header() {
                   <Image src={logo} roundedCircle width={100} />
                 </Col>
               </Nav>
-              <Badge bg="light" text="dark">
+              <Badge bg="light" text="dark" as={Link} to={"/cart"}>
                 carrito
               </Badge>
             </Container>
@@ -38,6 +40,7 @@ function Header() {
           <Route path='/electronic' element={<Electronic/>}/>
           <Route path='/men' element={<Men/>}/>
           <Route path='/women' element={<Women/>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
 </>

@@ -1,5 +1,6 @@
-import Button from 'react-bootstrap/Button';
+import {  Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
+import Badge from "react-bootstrap/Badge";
 
 const Store = () => {
   return (
@@ -8,31 +9,31 @@ const Store = () => {
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Articulos de hombre</Card.Title>
         <Card.Text>
-          card1
+          Articulos, como ropa y accesorios de hombre
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Badge bg="dark" as={Link} to={"/men"}>Go somewhere</Badge>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Articulos de Mujer</Card.Title>
         <Card.Text>
-          card2
+        Articulos, como ropa y accesorios de hombre
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Badge bg="dark" as={Link} to={"/women"}>Go somewhere</Badge>
       </Card.Body>
     </Card>
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Electrodomesticos</Card.Title>
         <Card.Text>
-          card3
+          Electrodomesticos y otras cosas
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Badge bg="dark" as={Link} to={"/electronic"}>Go somewhere</Badge>
       </Card.Body>
     </Card>
     </main>
