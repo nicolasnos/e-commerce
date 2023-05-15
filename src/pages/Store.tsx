@@ -1,11 +1,9 @@
-import Header from "../components/SHeader"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Store = () => {
   return (
     <>
-    <Header/>
     <main className="me-auto">
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />

@@ -12,7 +12,6 @@ const Menu = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <BrowserRouter>
     <aside>      
       <Button variant="dark" onClick={handleShow}>Menu </Button>
 
@@ -20,6 +19,7 @@ const Menu = () => {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>E-Commerce</Offcanvas.Title>
         </Offcanvas.Header>
+      <BrowserRouter>
         <Offcanvas.Body>
 
           <Nav defaultActiveKey="/home" className="flex-column">
@@ -29,13 +29,13 @@ const Menu = () => {
             <Nav.Link as={Link} to={"/"}>women</Nav.Link>
           </Nav>
         </Offcanvas.Body>
-      </Offcanvas>
-    </aside>
           <Routes>
           <Route path='/' element={<Store/>}/>
           <Route path='/electronic' element={<Electronic/>}/>
         </Routes>
       </BrowserRouter>
+      </Offcanvas>
+    </aside>
     )
 }
 
