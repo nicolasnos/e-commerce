@@ -6,6 +6,7 @@ import Men from '../pages/Men';
 import Women from '../pages/Women';
 import Cart from '../pages/Cart';
 /* Importaciones de bootstrap */
+import { BsFillCartPlusFill } from 'react-icons/bs'
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -28,7 +29,7 @@ function Header() {
                 </Col>
               </Nav>
               <Badge bg="light" text="dark" as={Link} to={"/cart"}>
-                carrito
+                <BsFillCartPlusFill/>
               </Badge>
             </Container>
           </Navbar>
