@@ -21,9 +21,7 @@ function Header() {
         <header>
           <Navbar bg="dark" variant="dark">
             <Container className="me-auto">
-              <Badge bg="light" text="dark">
                 <Menu/>
-              </Badge>
               <Nav>
                 <Col xs={6} md={4}>
                   <Image src={logo} roundedCircle width={100} />

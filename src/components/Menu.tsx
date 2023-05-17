@@ -3,6 +3,7 @@ import {  Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
+import { AiOutlineMenuUnfold } from 'react-icons/ai'
 
 const Menu = () => {
   const [show, setShow] = useState(false);
@@ -11,7 +12,7 @@ const Menu = () => {
   const handleShow = () => setShow(true);
   return (
     <aside>      
-      <Button variant="dark" onClick={handleShow}>Menu </Button>
+      <Button variant="light" onClick={handleShow}><AiOutlineMenuUnfold/></Button>
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
@@ -20,11 +21,11 @@ const Menu = () => {
         <Offcanvas.Body>
 
           <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link as={Link} to={"/"}>Inicio</Nav.Link>
-            <Nav.Link as={Link} to={"/electronic"}>Electronicos</Nav.Link>
-            <Nav.Link as={Link} to={"/men"}>Hombre</Nav.Link>
-            <Nav.Link as={Link} to={"/women"}>Mujer</Nav.Link>
-            <Nav.Link as={Link} to={"/cart"}>Carrito</Nav.Link>
+            <Nav.Link as={Link} to={"/"} onClick={handleClose}>Inicio</Nav.Link>
+            <Nav.Link as={Link} to={"/electronic"} onClick={handleClose}>Electronicos y Joyeria</Nav.Link>
+            <Nav.Link as={Link} to={"/men"} onClick={handleClose}>Hombre</Nav.Link>
+            <Nav.Link as={Link} to={"/women"} onClick={handleClose}>Mujer</Nav.Link>
+            <Nav.Link as={Link} to={"/cart"} onClick={handleClose}>Carrito</Nav.Link>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
