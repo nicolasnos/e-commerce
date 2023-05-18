@@ -5,6 +5,7 @@ import Electronic from '../pages/Electronic';
 import Men from '../pages/Men';
 import Women from '../pages/Women';
 import Cart from '../pages/Cart';
+import Context from "../Context"
 /* Importaciones de bootstrap */
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import Container from "react-bootstrap/Container";
@@ -28,8 +29,8 @@ function Header() {
                   <Image src={logo} roundedCircle width={100} />
                 </Col>
               </Nav>
-              <Badge bg="light" text="dark" as={Link} to={"/cart"}>
-                <BsFillCartPlusFill/>
+              <Badge bg="light" text="dark" as={Link} to={"/cart"} >
+                <BsFillCartPlusFill className="cartImg"/>
               </Badge>
             </Container>
           </Navbar>
@@ -39,7 +40,8 @@ function Header() {
           <Route path='/electronic' element={<Electronic/>}/>
           <Route path='/men' element={<Men/>}/>
           <Route path='/women' element={<Women/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/cart' element={<Context/>}/>
+          {/* <Route path='/cart' element={<Cart/>}/> */}
         </Routes>
       </BrowserRouter>
 </>
