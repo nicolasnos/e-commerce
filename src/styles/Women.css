@@ -1,0 +1,10 @@
+.Women {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.confirm{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
