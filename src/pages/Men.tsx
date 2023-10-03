@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import '../styles/Men.css'
 
 const Men = () => {
   const [info, setInfo] = useState([])
@@ -16,8 +17,7 @@ const Men = () => {
     setInfo(data)
   }
   
-  const filteredM = info.filter((item) => item.category.includes("men") && !item.category.includes("women"));
-  console.log(filteredM)
+  const filteredM = info.filter((item: any) => item.category.includes("men") && !item.category.includes("women"));
   
   const itemsM = filteredM.map((item: {title: string, description: string, image: string, price: number, category: string}, i: number)=>
     <Card style={{ width: '18rem', margin: '1.5rem' }} key={i}>
@@ -27,8 +27,10 @@ const Men = () => {
         <Card.Text>
           {item.description}
         </Card.Text>
-        <Badge bg="light" text="dark">{item.price}</Badge>
-        <Button variant="primary"><AiOutlineShoppingCart/></Button>
+        <div className='confirm'>
+          <Badge bg="light" text="dark">{item.price}</Badge>
+          <Button style={{width: '5rem'}} variant="primary"><AiOutlineShoppingCart/></Button>
+        </div>
       </Card.Body>
     </Card>
   );
