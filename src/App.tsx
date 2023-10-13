@@ -1,12 +1,11 @@
-import Start from './pages/Start'
+import Start from "./pages/Start";
 
 function App() {
-
   return (
     <>
-      <Start/>
+      <Start />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
