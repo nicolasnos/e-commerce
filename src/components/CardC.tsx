@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
@@ -10,24 +10,18 @@ interface CardProps {
   image: string;
   price: number;
   category: string;
-  key: number;
+  id: number;
 }
-const CardC = ({
-  title,
-  description,
-  image,
-  price,
-  category,
-  key,
-}: CardProps) => {
+const CardC = ({ title, description, image, price, id }: CardProps) => {
+  console.log(id);
   const [showMore, setShowMore] = useState(false);
   const chunked = () => {
     const cut = description.substring(0, 100);
     return <p>{cut}</p>;
   };
   return (
-    <div>
-      <Card style={{ width: "18rem", margin: "1.5rem" }} key={key}>
+    <div key={id}>
+      <Card style={{ width: "18rem", margin: "1.5rem" }}>
         <Card.Img
           variant="top"
           src={image}

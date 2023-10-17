@@ -16,28 +16,26 @@ const Men = () => {
   };
 
   const filteredM = info.filter(
-    (item: any) =>
+    (item: { category: string }) =>
       item.category.includes("men") && !item.category.includes("women")
   );
 
   const itemsM = filteredM.map(
-    (
-      item: {
-        title: string;
-        description: string;
-        image: string;
-        price: number;
-        category: string;
-      },
-      i: number
-    ) => (
+    (item: {
+      title: string;
+      description: string;
+      image: string;
+      price: number;
+      category: string;
+      id: number;
+    }) => (
       <CardC
         title={item.title}
         description={item.description}
         image={item.image}
         price={item.price}
         category={item.category}
-        key={i}
+        id={item.id}
       />
     )
   );
