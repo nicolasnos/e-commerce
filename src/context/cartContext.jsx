@@ -1,13 +1,27 @@
-import React, { useState, createContext, useContext, Children } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const CartContext = () => {
-  const cartGeneralContext = createContext();
-  const [items, setItems] = useState("ola");
+// Paso 1: Crear el contexto
+const CartContext = createContext();
 
-  const addItem = (item) => {};
-  console.log(items);
+// Paso 2: Crear un componente Provider
+const CartContextProvider = ({ children }) => {
+  const [itemList, setItemList] = useState("0");
 
-  return <CartContext.Provider value={items}>{Children}</CartContext.Provider>;
+  const addItemList = () => {
+    setItemList("hola perro");
+  };
+
+  return (
+    <CartContext.Provider value={{ itemList, addItemList }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
-export { CartContext };
+// Paso 3: Crear un hook personalizado para acceder al contexto
+const useTheme = () => {
+  return useContext(CartContext);
+};
+
+export default CartContextProvider;
+export { CartContext, useTheme };
