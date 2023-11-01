@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useTheme } from "../context/CartContext.jsx";
 
 interface CardProps {
   title: string;
@@ -13,7 +14,7 @@ interface CardProps {
   id: number;
 }
 const CardC = ({ title, description, image, price, id }: CardProps) => {
-  console.log(id);
+  const { addItemList } = useTheme();
   const [showMore, setShowMore] = useState(false);
   const chunked = () => {
     const cut = description.substring(0, 100);
@@ -47,7 +48,11 @@ const CardC = ({ title, description, image, price, id }: CardProps) => {
             <Badge bg="light" text="dark">
               {price}
             </Badge>
-            <Button style={{ width: "5rem" }} variant="primary">
+            <Button
+              style={{ width: "5rem" }}
+              variant="primary"
+              onClick={addItemList}
+            >
               <AiOutlineShoppingCart />
             </Button>
           </div>
