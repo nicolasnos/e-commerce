@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../context/CartContext.jsx";
 import "../styles/Electronic.css";
 import CardC from "../components/CardC";
+import { baseAPI } from "../assets/constants";
 
 const Electronic = () => {
   const [info, setInfo] = useState([]);
@@ -9,7 +11,7 @@ const Electronic = () => {
   }, []);
 
   const showApi = async () => {
-    const res = await fetch("https://fakestoreapi.com/products/");
+    const res = await fetch(baseAPI);
     const data = await res.json();
     setInfo(data);
   };
@@ -35,6 +37,7 @@ const Electronic = () => {
         price={item.price}
         category={item.category}
         id={item.id}
+        item={item}
       />
     )
   );

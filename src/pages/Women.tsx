@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Women.css";
 import CardC from "../components/CardC";
+import { baseAPI } from "../assets/constants";
 
 const Women = () => {
   const [info, setInfo] = useState([]);
@@ -9,7 +10,7 @@ const Women = () => {
   }, []);
 
   const showApi = async () => {
-    const res = await fetch("https://fakestoreapi.com/products/");
+    const res = await fetch(baseAPI);
     const data = await res.json();
     setInfo(data);
   };
@@ -32,6 +33,7 @@ const Women = () => {
         price={item.price}
         category={item.category}
         id={item.id}
+        item={item}
       />
     )
   );

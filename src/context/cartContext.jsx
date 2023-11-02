@@ -1,14 +1,18 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Paso 1: Crear el contexto
 const CartContext = createContext();
 
 // Paso 2: Crear un componente Provider
 const CartContextProvider = ({ children }) => {
-  const [itemList, setItemList] = useState("0");
+  const [itemList, setItemList] = useState([]);
 
-  const addItemList = () => {
-    setItemList("hola perro");
+  useEffect(() => {
+    console.log(itemList);
+  }, [itemList]);
+
+  const addItemList = (item) => {
+    setItemList([...itemList, item]);
   };
 
   return (
