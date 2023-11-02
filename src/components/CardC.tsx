@@ -12,10 +12,15 @@ interface CardProps {
   price: number;
   category: string;
   id: number;
+  item: object;
 }
-const CardC = ({ title, description, image, price, id }: CardProps) => {
+const CardC = ({ title, description, image, price, id, item }: CardProps) => {
   const { addItemList } = useTheme();
   const [showMore, setShowMore] = useState(false);
+
+  const handleAddItem = (item: object) => {
+    addItemList(item);
+  };
   const chunked = () => {
     const cut = description.substring(0, 100);
     return <p>{cut}</p>;
@@ -51,7 +56,7 @@ const CardC = ({ title, description, image, price, id }: CardProps) => {
             <Button
               style={{ width: "5rem" }}
               variant="primary"
-              onClick={addItemList}
+              onClick={() => handleAddItem(item)}
             >
               <AiOutlineShoppingCart />
             </Button>

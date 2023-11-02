@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import CartContext, { useTheme } from "../context/CartContext.jsx";
+import { useEffect, useState } from "react";
+import { useTheme } from "../context/CartContext.jsx";
 import "../styles/Men.css";
 import CardC from "../components/CardC";
+import { baseAPI } from "../assets/constants";
 
 const Men = () => {
-  const { itemList, addItemList } = useTheme();
+  const { itemList } = useTheme();
   console.log(itemList);
 
   const [info, setInfo] = useState([]);
@@ -13,7 +14,7 @@ const Men = () => {
   }, []);
 
   const showApi = async () => {
-    const res = await fetch("https://fakestoreapi.com/products/");
+    const res = await fetch(baseAPI);
     const data = await res.json();
     setInfo(data);
   };
@@ -39,6 +40,7 @@ const Men = () => {
         price={item.price}
         category={item.category}
         id={item.id}
+        item={item}
       />
     )
   );
