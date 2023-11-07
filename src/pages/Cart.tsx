@@ -1,9 +1,9 @@
-import { useTheme } from "../context/CartContext.jsx";
+import { useCart } from "../context/CartContext.jsx";
+import ItemCard from "../components/ItemCard.js";
 
 const Cart = () => {
-  const { itemList } = useTheme();
-  console.log(itemList);
-  return <div>Soy el carrito</div>;
+  const { itemList } = useCart();
+  return <ItemCard />;
 };
 
 export default Cart;

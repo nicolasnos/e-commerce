@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../context/CartContext.jsx";
 import "../styles/Electronic.css";
 import CardC from "../components/CardC";
 import { baseAPI } from "../assets/constants";

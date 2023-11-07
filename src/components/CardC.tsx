@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useTheme } from "../context/CartContext.jsx";
+import { useCart } from "../context/CartContext.jsx";
 
 interface CardProps {
   title: string;
@@ -15,7 +15,7 @@ interface CardProps {
   item: object;
 }
 const CardC = ({ title, description, image, price, id, item }: CardProps) => {
-  const { addItemList } = useTheme();
+  const { addItemList } = useCart();
   const [showMore, setShowMore] = useState(false);
 
   const handleAddItem = (item: object) => {
