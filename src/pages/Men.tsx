@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../context/CartContext.jsx";
 import "../styles/Men.css";
 import CardC from "../components/CardC";
 import { baseAPI } from "../assets/constants";
 
 const Men = () => {
-  const { itemList } = useTheme();
-  console.log(itemList);
-
   const [info, setInfo] = useState([]);
   useEffect(() => {
     showApi();

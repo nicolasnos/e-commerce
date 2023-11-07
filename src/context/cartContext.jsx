@@ -15,17 +15,29 @@ const CartContextProvider = ({ children }) => {
     setItemList([...itemList, item]);
   };
 
+  const deleteItemList = (item) => {
+    const index = itemList.indexOf(item);
+
+    if (index !== -1) {
+      const newItemList = [...itemList];
+      newItemList.splice(index, 1);
+      setItemList(newItemList);
+    } else {
+      alert(`no se encontro a ${item}`);
+    }
+  };
+
   return (
-    <CartContext.Provider value={{ itemList, addItemList }}>
+    <CartContext.Provider value={{ itemList, addItemList, deleteItemList }}>
       {children}
     </CartContext.Provider>
   );
 };
 
 // Paso 3: Crear un hook personalizado para acceder al contexto
-const useTheme = () => {
+const useCart = () => {
   return useContext(CartContext);
 };
 
 export default CartContextProvider;
-export { CartContext, useTheme };
+export { CartContext, useCart };
