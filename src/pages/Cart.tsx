@@ -1,9 +1,13 @@
-import { useCart } from "../context/CartContext.jsx";
 import ItemCard from "../components/ItemCard.js";
+import Calculator from "../components/Calculator.jsx";
 
 const Cart = () => {
-  const { itemList } = useCart();
-  return <ItemCard />;
+  return (
+    <>
+      <ItemCard />
+      <Calculator />
+    </>
+  );
 };
 
 export default Cart;

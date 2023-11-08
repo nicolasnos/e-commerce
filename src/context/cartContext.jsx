@@ -7,10 +7,6 @@ const CartContext = createContext();
 const CartContextProvider = ({ children }) => {
   const [itemList, setItemList] = useState([]);
 
-  useEffect(() => {
-    console.log(itemList);
-  }, [itemList]);
-
   const addItemList = (item) => {
     setItemList([...itemList, item]);
   };

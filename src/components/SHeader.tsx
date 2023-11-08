@@ -1,5 +1,6 @@
 import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
 import CartContextProvider from "../context/CartContext";
+import { useCart } from "../context/CartContext.jsx";
 import Menu from "../components/Menu";
 import Store from "../pages/Store";
 import Electronic from "../pages/Electronic";
