@@ -8,12 +8,13 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.Prettierrc
 dist
 dist-ssr
 *.local
-src\assets\constants.ts
+src/assets/constants.ts
 .env
-
+src/env.js
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
