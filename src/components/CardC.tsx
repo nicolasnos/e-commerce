@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext.jsx";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useCart } from "../context/CartContext.jsx";
 
 interface CardProps {
   title: string;
@@ -20,6 +20,7 @@ const CardC = ({ title, description, image, price, id, item }: CardProps) => {
 
   const handleAddItem = (item: object) => {
     addItemList(item);
+    alert("has añadido al carrito " + item.title);
   };
   const chunked = () => {
     const cut = description.substring(0, 100);

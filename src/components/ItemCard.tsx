@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useCart } from "../context/CartContext.jsx";
@@ -13,9 +12,8 @@ interface CardProps {
   id: number;
   item: object;
 }
-const ItemCard = () => {
+const ItemCard = ({ cuantity, setCuantity }: any) => {
   const { itemList, deleteItemList } = useCart();
-  const [cuantity, setCuantity] = useState(1);
 
   const handleDelete = (item: object) => {
     deleteItemList(item);
