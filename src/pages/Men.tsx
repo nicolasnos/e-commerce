@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "../styles/Men.css";
 import CardC from "../components/CardC";
 import { baseAPI } from "../assets/constants";
+import { CardGroup } from "react-bootstrap";
 
 const Men = () => {
   const [info, setInfo] = useState([]);
@@ -41,7 +41,7 @@ const Men = () => {
     )
   );
 
-  return <section className="Men">{itemsM}</section>;
+  return <CardGroup>{itemsM}</CardGroup>;
 };
 
 export default Men;

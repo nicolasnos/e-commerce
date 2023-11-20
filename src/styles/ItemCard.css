@@ -1,0 +1,9 @@
+.Articles {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+h2 {
+  margin: auto;
+}

@@ -1,0 +1,22 @@
+.totalValue {
+  border: 5px solid gray;
+  border-radius: 20px;
+  padding: 1.2rem;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.whatsapp {
+  font-size: 40px;
+  color: rgb(89, 133, 24);
+}
+
+@media (min-width: 800px) {
+  .totalValue {
+    position: absolute;
+    top: 150px;
+    right: 5%;
+  }
+}
