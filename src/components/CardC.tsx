@@ -18,7 +18,7 @@ const CardC = ({ title, description, image, price, id, item }: CardProps) => {
   const { addItemList } = useCart();
   const [showMore, setShowMore] = useState(false);
 
-  const handleAddItem = (item: object) => {
+  const handleAddItem = (item: CardProps) => {
     addItemList(item);
     alert("has añadido al carrito " + item.title);
   };

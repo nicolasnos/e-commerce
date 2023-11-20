@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/Women.css";
 import CardC from "../components/CardC";
 import { baseAPI } from "../assets/constants";
+import { CardGroup } from "react-bootstrap";
 
 const Women = () => {
   const [info, setInfo] = useState([]);
@@ -37,7 +38,7 @@ const Women = () => {
       />
     )
   );
-  return <section className="Women">{itemsM}</section>;
+  return <CardGroup className="Women">{itemsM}</CardGroup>;
 };
 
 export default Women;

@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useCart } from "../context/CartContext.jsx";
 import { FaTrashAlt } from "react-icons/fa";
+import "../styles/ItemCard.css";
 
 interface CardProps {
   title: string;
@@ -23,10 +24,21 @@ const ItemCard = ({ cuantity, setCuantity }: any) => {
     itemList.length > 0 ? (
       itemList.map((items: CardProps) => (
         <div key={items.id}>
-          <Card>
+          <Card
+            className="text-center"
+            style={{
+              width: "16rem",
+              margin: "1rem",
+            }}
+          >
             <Card.Img
               variant="top"
-              style={{ width: "10rem", height: "8rem", objectFit: "contain" }}
+              style={{
+                width: "6rem",
+                height: "4rem",
+                margin: "auto",
+                objectFit: "contain",
+              }}
               src={items.image}
             />
             <Card.Body>
@@ -51,7 +63,7 @@ const ItemCard = ({ cuantity, setCuantity }: any) => {
     ) : (
       <h2>sin items en el carrito</h2>
     );
-  return <div>{cartVerfy}</div>;
+  return <div className="Articles">{cartVerfy}</div>;
 };
 
 export default ItemCard;

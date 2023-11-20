@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/Electronic.css";
 import CardC from "../components/CardC";
 import { baseAPI } from "../assets/constants";
+import { CardGroup } from "react-bootstrap";
 
 const Electronic = () => {
   const [info, setInfo] = useState([]);
@@ -40,7 +41,7 @@ const Electronic = () => {
       />
     )
   );
-  return <section className="Electronic">{itemsM}</section>;
+  return <CardGroup className="Electronic">{itemsM}</CardGroup>;
 };
 
 export default Electronic;
