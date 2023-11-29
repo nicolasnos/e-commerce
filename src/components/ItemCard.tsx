@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useCart } from "../context/CartContext.jsx";
+import { useCart } from "../context/CartContext.js";
 import { FaTrashAlt } from "react-icons/fa";
 import "../styles/ItemCard.css";
 
@@ -11,19 +11,18 @@ interface CardProps {
   price: number;
   category: string;
   id: number;
-  item: object;
 }
 const ItemCard = ({ cuantity, setCuantity }: any) => {
-  const { itemList, deleteItemList } = useCart();
+  const { cartItems, removeFromCart } = useCart();
 
-  const handleDelete = (item: object) => {
-    deleteItemList(item);
+  const handleDelete = (item: number) => {
+    removeFromCart(item);
   };
 
   const cartVerfy =
-    itemList.length > 0 ? (
-      itemList.map((items: CardProps) => (
-        <div key={items.id}>
+    cartItems.length > 0 ? (
+      cartItems.map((cartItem: CardProps) => (
+        <div key={cartItem.id}>
           <Card
             className="text-center"
             style={{
@@ -39,10 +38,10 @@ const ItemCard = ({ cuantity, setCuantity }: any) => {
                 margin: "auto",
                 objectFit: "contain",
               }}
-              src={items.image}
+              src={cartItem.image}
             />
             <Card.Body>
-              <Card.Title>{items.title}</Card.Title>
+              <Card.Title>{cartItem.title}</Card.Title>
               <Button
                 disabled={cuantity == 1 ? true : false}
                 onClick={() => setCuantity(cuantity - 1)}
@@ -53,7 +52,10 @@ const ItemCard = ({ cuantity, setCuantity }: any) => {
               <Button onClick={() => setCuantity(cuantity + 1)}>+</Button>
             </Card.Body>
             <Card.Footer>
-              <Button onClick={() => handleDelete(items)} variant="danger">
+              <Button
+                onClick={() => handleDelete(cartItem.id)}
+                variant="danger"
+              >
                 <FaTrashAlt />
               </Button>
             </Card.Footer>

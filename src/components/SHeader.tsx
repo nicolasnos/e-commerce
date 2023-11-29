@@ -1,6 +1,4 @@
 import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
-import CartContextProvider from "../context/CartContext";
-import { useCart } from "../context/CartContext.jsx";
 import Menu from "../components/Menu";
 import Store from "../pages/Store";
 import Electronic from "../pages/Electronic";
@@ -19,32 +17,30 @@ import logo from "../assets/images/Nlogo.png";
 
 function Header() {
   return (
-    <CartContextProvider>
-      <BrowserRouter>
-        <header>
-          <Navbar bg="dark" variant="dark">
-            <Container className="me-auto">
-              <Menu />
-              <Nav>
-                <Col xs={6} md={4}>
-                  <Image src={logo} roundedCircle width={100} />
-                </Col>
-              </Nav>
-              <Badge bg="light" text="dark" as={Link} to={"/cart"}>
-                <BsFillCartPlusFill />
-              </Badge>
-            </Container>
-          </Navbar>
-        </header>
-        <Routes>
-          <Route path="/" element={<Store />} />
-          <Route path="/electronic" element={<Electronic />} />
-          <Route path="/men" element={<Men />} />
-          <Route path="/women" element={<Women />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
-    </CartContextProvider>
+    <BrowserRouter>
+      <header>
+        <Navbar bg="dark" variant="dark">
+          <Container className="me-auto">
+            <Menu />
+            <Nav>
+              <Col xs={6} md={4}>
+                <Image src={logo} roundedCircle width={100} />
+              </Col>
+            </Nav>
+            <Badge bg="light" text="dark" as={Link} to={"/cart"}>
+              <BsFillCartPlusFill />
+            </Badge>
+          </Container>
+        </Navbar>
+      </header>
+      <Routes>
+        <Route path="/" element={<Store />} />
+        <Route path="/electronic" element={<Electronic />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

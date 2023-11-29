@@ -1,7 +1,12 @@
 import SHeader from "../components/SHeader";
+import { CartProvider } from "../context/CartContext";
 
 const Start = () => {
-  return <SHeader />;
+  return (
+    <CartProvider>
+      <SHeader />
+    </CartProvider>
+  );
 };
 
 export default Start;
