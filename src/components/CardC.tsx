@@ -1,9 +1,18 @@
 import { useState } from "react";
-import { useCart } from "../context/CartContext.jsx";
+import { useCart } from "../context/CartContext.js";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+
+interface ItemProps {
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  category: string;
+  id: number;
+}
 
 interface CardProps {
   title: string;
@@ -12,14 +21,14 @@ interface CardProps {
   price: number;
   category: string;
   id: number;
-  item: object;
+  item: ItemProps;
 }
 const CardC = ({ title, description, image, price, id, item }: CardProps) => {
-  const { addItemList } = useCart();
+  const { addToCart } = useCart();
   const [showMore, setShowMore] = useState(false);
 
-  const handleAddItem = (item: CardProps) => {
-    addItemList(item);
+  const handleAddItem = (item: ItemProps) => {
+    addToCart(item);
     alert("has añadido al carrito " + item.title);
   };
   const chunked = () => {

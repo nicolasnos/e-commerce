@@ -16,10 +16,10 @@ interface CardProps {
 }
 
 const Calculator = ({ cuantity }: any) => {
-  const { itemList } = useCart();
+  const { cartItems } = useCart();
   const initialValue = 0;
 
-  const totalItemsValues = itemList.map((item: any) => {
+  const totalItemsValues = cartItems.map((item: any) => {
     return item.price * cuantity;
   });
 
@@ -28,13 +28,13 @@ const Calculator = ({ cuantity }: any) => {
     initialValue
   );
 
-  const itemsToPay = itemList.map((item: CardProps) => {
+  /*   const itemsToPay = cartItems.map((item: CardProps) => {
     return `${item.title}+de+valor+${item.price}+en+cantidad+${cuantity}`;
-  });
+  }); */
 
   return (
     <>
-      {itemList.length > 0 ? (
+      {cartItems.length > 0 ? (
         <div className="totalValue">
           <p>El valor total de tus articulos es</p>
           <h3>{totalValue} USD</h3>
