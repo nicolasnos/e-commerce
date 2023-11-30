@@ -1,17 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useCart } from "../context/CartContext.js";
+import { useCart, CartItem } from "../context/CartContext.js";
 import { FaTrashAlt } from "react-icons/fa";
 import "../styles/ItemCard.css";
 
-interface CardProps {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  category: string;
-  id: number;
-}
 const ItemCard = ({ cuantity, setCuantity }: any) => {
   const { cartItems, removeFromCart } = useCart();
 
@@ -21,7 +13,7 @@ const ItemCard = ({ cuantity, setCuantity }: any) => {
 
   const cartVerfy =
     cartItems.length > 0 ? (
-      cartItems.map((cartItem: CardProps) => (
+      cartItems.map((cartItem: CartItem) => (
         <div key={cartItem.id}>
           <Card
             className="text-center"

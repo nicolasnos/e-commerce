@@ -1,18 +1,9 @@
 import { useState } from "react";
-import { useCart } from "../context/CartContext.js";
+import { useCart, CartItem } from "../context/CartContext.js";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
-interface ItemProps {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  category: string;
-  id: number;
-}
 
 interface CardProps {
   title: string;
@@ -21,13 +12,13 @@ interface CardProps {
   price: number;
   category: string;
   id: number;
-  item: ItemProps;
+  item: CartItem;
 }
 const CardC = ({ title, description, image, price, id, item }: CardProps) => {
   const { addToCart } = useCart();
   const [showMore, setShowMore] = useState(false);
 
-  const handleAddItem = (item: ItemProps) => {
+  const handleAddItem = (item: CartItem) => {
     addToCart(item);
     alert("has añadido al carrito " + item.title);
   };
