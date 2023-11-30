@@ -1,19 +1,9 @@
-import { useCart } from "../context/CartContext";
+import { useCart, CartItem } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
 import { FaStore } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
 import "../styles/Calculator.css";
-
-interface CardProps {
-  title: string;
-  description: string;
-  image: string;
-  price: number;
-  category: string;
-  id: number;
-  item: object;
-}
 
 const Calculator = ({ cuantity }: any) => {
   const { cartItems } = useCart();
@@ -28,9 +18,9 @@ const Calculator = ({ cuantity }: any) => {
     initialValue
   );
 
-  /*   const itemsToPay = cartItems.map((item: CardProps) => {
+  const itemsToPay = cartItems.map((item: CartItem) => {
     return `${item.title}+de+valor+${item.price}+en+cantidad+${cuantity}`;
-  }); */
+  });
 
   return (
     <>

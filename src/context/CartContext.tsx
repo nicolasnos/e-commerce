@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export interface CartItem {
   title: string;
@@ -15,11 +15,15 @@ export interface CartContextType {
   removeFromCart: (itemId: number) => void;
 }
 
+type ComponentProp = {
+  children: string | JSX.Element | JSX.Element[];
+};
+
 // Paso 1: Crear el contexto
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider: React.FC = ({ children }) => {
+export const CartProvider = ({ children }: ComponentProp) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (item: CartItem) => {
